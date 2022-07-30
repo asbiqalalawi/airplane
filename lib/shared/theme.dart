@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+const double defautMargin = 24;
+const double defautRadius = 17;
+
 const Color primaryColor = Color(0xff5C40CC);
 const Color blackColor = Color(0xff1F1449);
 const Color whiteColor = Color(0xffFFFFFF);
