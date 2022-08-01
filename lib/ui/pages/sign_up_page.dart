@@ -41,12 +41,12 @@ class SignUpPage extends StatelessWidget {
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(
-                      defautRadius,
+                      defaultRadius,
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(
-                      defautRadius,
+                      defaultRadius,
                     ),
                     borderSide: const BorderSide(
                       color: primaryColor,
@@ -80,12 +80,12 @@ class SignUpPage extends StatelessWidget {
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(
-                      defautRadius,
+                      defaultRadius,
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(
-                      defautRadius,
+                      defaultRadius,
                     ),
                     borderSide: const BorderSide(
                       color: primaryColor,
@@ -120,12 +120,12 @@ class SignUpPage extends StatelessWidget {
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(
-                      defautRadius,
+                      defaultRadius,
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(
-                      defautRadius,
+                      defaultRadius,
                     ),
                     borderSide: const BorderSide(
                       color: primaryColor,
@@ -159,12 +159,12 @@ class SignUpPage extends StatelessWidget {
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(
-                      defautRadius,
+                      defaultRadius,
                     ),
                   ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(
-                      defautRadius,
+                      defaultRadius,
                     ),
                     borderSide: const BorderSide(
                       color: primaryColor,
@@ -182,12 +182,14 @@ class SignUpPage extends StatelessWidget {
           height: 55,
           width: double.infinity,
           child: TextButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/bonus');
+              },
               style: TextButton.styleFrom(
                 backgroundColor: primaryColor,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(
-                    defautRadius,
+                    defaultRadius,
                   ),
                 ),
               ),
@@ -210,7 +212,7 @@ class SignUpPage extends StatelessWidget {
         decoration: BoxDecoration(
           color: whiteColor,
           borderRadius: BorderRadius.circular(
-            defautRadius,
+            defaultRadius,
           ),
         ),
         child: Column(
@@ -245,7 +247,7 @@ class SignUpPage extends StatelessWidget {
       body: SafeArea(
           child: ListView(
         padding: const EdgeInsets.symmetric(
-          horizontal: defautMargin,
+          horizontal: defaultMargin,
         ),
         children: [
           title(),
