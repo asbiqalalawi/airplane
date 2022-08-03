@@ -1,4 +1,6 @@
 import 'package:airplane/shared/theme.dart';
+import 'package:airplane/ui/widgets/button_container.dart';
+import 'package:airplane/ui/widgets/text_field_widget.dart';
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatelessWidget {
@@ -21,185 +23,39 @@ class SignUpPage extends StatelessWidget {
 
     Widget inputSection() {
       Widget nameField() {
-        return Container(
-          margin: const EdgeInsets.only(bottom: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Full Name',
-                style: blackTextStyle.copyWith(
-                  fontSize: 14,
-                  fontWeight: regular,
-                ),
-              ),
-              const SizedBox(
-                height: 6,
-              ),
-              TextFormField(
-                cursorColor: blackColor,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(
-                      defaultRadius,
-                    ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(
-                      defaultRadius,
-                    ),
-                    borderSide: const BorderSide(
-                      color: primaryColor,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+        return const TextFieldWidget(
+          title: 'Full Name',
         );
       }
 
       Widget emailField() {
-        return Container(
-          margin: const EdgeInsets.only(bottom: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Email Address',
-                style: blackTextStyle.copyWith(
-                  fontSize: 14,
-                  fontWeight: regular,
-                ),
-              ),
-              const SizedBox(
-                height: 6,
-              ),
-              TextFormField(
-                cursorColor: blackColor,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(
-                      defaultRadius,
-                    ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(
-                      defaultRadius,
-                    ),
-                    borderSide: const BorderSide(
-                      color: primaryColor,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+        return const TextFieldWidget(
+          title: 'Email Address',
         );
       }
 
       Widget passwordField() {
-        return Container(
-          margin: const EdgeInsets.only(bottom: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Password',
-                style: blackTextStyle.copyWith(
-                  fontSize: 14,
-                  fontWeight: regular,
-                ),
-              ),
-              const SizedBox(
-                height: 6,
-              ),
-              TextFormField(
-                cursorColor: blackColor,
-                obscureText: true,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(
-                      defaultRadius,
-                    ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(
-                      defaultRadius,
-                    ),
-                    borderSide: const BorderSide(
-                      color: primaryColor,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+        return const TextFieldWidget(
+          title: 'Password',
+          obscureText: true,
         );
       }
 
       Widget hobbyField() {
-        return Container(
-          margin: const EdgeInsets.only(bottom: 30),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                'Hobby',
-                style: blackTextStyle.copyWith(
-                  fontSize: 14,
-                  fontWeight: regular,
-                ),
-              ),
-              const SizedBox(
-                height: 6,
-              ),
-              TextFormField(
-                cursorColor: blackColor,
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(
-                      defaultRadius,
-                    ),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(
-                      defaultRadius,
-                    ),
-                    borderSide: const BorderSide(
-                      color: primaryColor,
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
+        return const TextFieldWidget(
+          title: 'Hobby',
         );
       }
 
       Widget getStartedButton() {
-        return SizedBox(
-          height: 55,
-          width: double.infinity,
-          child: TextButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/bonus');
-              },
-              style: TextButton.styleFrom(
-                backgroundColor: primaryColor,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(
-                    defaultRadius,
-                  ),
-                ),
-              ),
-              child: Text(
-                'Get Started',
-                style: whiteTextStyle.copyWith(
-                  fontSize: 18,
-                  fontWeight: medium,
-                ),
-              )),
+        return ContainerButton(
+          text: 'Get Started',
+          onPress: () {
+            Navigator.pushNamed(
+              context,
+              '/bonus',
+            );
+          },
         );
       }
 
