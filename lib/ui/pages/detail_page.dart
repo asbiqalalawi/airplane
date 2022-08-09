@@ -231,7 +231,9 @@ class DetailPage extends StatelessWidget {
                   ),
                   ContainerButton(
                     text: 'Book Now',
-                    onPress: () {},
+                    onPress: () {
+                      Navigator.pushNamed(context, '/choose-seat');
+                    },
                     width: 170,
                   ),
                 ],
