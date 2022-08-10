@@ -12,6 +12,8 @@ const Color greenColor = Color(0xff0EC3AE);
 const Color pinkColor = Color(0xffEB70A5);
 const Color backgroundColor = Color(0xffFAFAFA);
 const Color inactiveColor = Color(0xffDBD7EC);
+const Color availableColor = Color(0xffE0D9FF);
+const Color unavailableColor = Color(0xffEBECF1);
 
 TextStyle blackTextStyle = GoogleFonts.poppins(
   color: blackColor,
