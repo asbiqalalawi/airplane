@@ -80,6 +80,7 @@ class DestinationTile extends StatelessWidget {
                         image: AssetImage(
                           'assets/icon_star.png',
                         ),
+                        fit: BoxFit.cover,
                       ),
                     ),
                   ),

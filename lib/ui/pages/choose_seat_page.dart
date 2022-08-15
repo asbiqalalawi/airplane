@@ -350,7 +350,12 @@ class ChooseSeatPage extends StatelessWidget {
       return ContainerButton(
           margin: const EdgeInsets.only(top: 30, bottom: 46),
           text: 'Continue to Checkout',
-          onPress: () {});
+          onPress: () {
+            Navigator.pushNamed(
+              context,
+              '/checkout',
+            );
+          });
     }
 
     return Scaffold(

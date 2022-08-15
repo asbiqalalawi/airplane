@@ -1,16 +1,23 @@
 import 'package:airplane/shared/theme.dart';
 import 'package:flutter/material.dart';
 
-class InterestItem extends StatelessWidget {
-  final String text;
-  const InterestItem({
+class BookingDetailsItem extends StatelessWidget {
+  final String title;
+  final String value;
+  final Color valueColor;
+  const BookingDetailsItem({
     Key? key,
-    required this.text,
+    required this.title,
+    required this.value,
+    this.valueColor = blackColor,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return Container(
+      margin: const EdgeInsets.only(
+        top: 16,
+      ),
       child: Row(
         children: [
           Container(
@@ -28,9 +35,17 @@ class InterestItem extends StatelessWidget {
             width: 6,
           ),
           Text(
-            text,
+            title,
             style: blackTextStyle,
           ),
+          const Spacer(),
+          Text(
+            value,
+            style: blackTextStyle.copyWith(
+              fontWeight: semiBold,
+              color: valueColor,
+            ),
+          )
         ],
       ),
     );
