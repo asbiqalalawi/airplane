@@ -1,6 +1,6 @@
 import 'package:airplane/shared/theme.dart';
 import 'package:airplane/ui/widgets/booking_details_item.dart';
-import 'package:airplane/ui/widgets/destination_tile.dart';
+import 'package:airplane/ui/widgets/button_container.dart';
 import 'package:flutter/material.dart';
 
 class CheckoutPage extends StatelessWidget {
@@ -116,6 +116,7 @@ class CheckoutPage extends StatelessWidget {
                           fontSize: 18,
                           fontWeight: medium,
                         ),
+                        overflow: TextOverflow.ellipsis,
                       ),
                       Text(
                         'Tangerang',
@@ -295,6 +296,29 @@ class CheckoutPage extends StatelessWidget {
       );
     }
 
+    Widget paymentButton() {
+      return ContainerButton(
+        text: 'Pay Now',
+        onPress: () {},
+        margin: const EdgeInsets.symmetric(vertical: 30),
+      );
+    }
+
+    Widget tncButton() {
+      return Container(
+        alignment: Alignment.center,
+        margin: const EdgeInsets.only(bottom: 30),
+        child: Text(
+          'Terms and Conditions',
+          style: greyTextStyle.copyWith(
+            fontSize: 16,
+            fontWeight: light,
+            decoration: TextDecoration.underline,
+          ),
+        ),
+      );
+    }
+
     return Scaffold(
       backgroundColor: backgroundColor,
       body: ListView(
@@ -305,6 +329,8 @@ class CheckoutPage extends StatelessWidget {
           route(),
           checkoutDetails(),
           paymentDetails(),
+          paymentButton(),
+          tncButton(),
         ],
       ),
     );
