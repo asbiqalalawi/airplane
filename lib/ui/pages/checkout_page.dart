@@ -299,7 +299,10 @@ class CheckoutPage extends StatelessWidget {
     Widget paymentButton() {
       return ContainerButton(
         text: 'Pay Now',
-        onPress: () {},
+        onPress: () => Navigator.pushNamed(
+          context,
+          '/success-checkout',
+        ),
         margin: const EdgeInsets.symmetric(vertical: 30),
       );
     }
