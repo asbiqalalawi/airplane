@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 class TextFieldWidget extends StatelessWidget {
   final String title;
   final bool obscureText;
+  final TextEditingController controller;
 
   const TextFieldWidget({
     Key? key,
     required this.title,
     this.obscureText = false,
+    required this.controller,
   }) : super(key: key);
 
   @override
@@ -29,6 +31,7 @@ class TextFieldWidget extends StatelessWidget {
             height: 6,
           ),
           TextFormField(
+            controller: controller,
             cursorColor: blackColor,
             obscureText: obscureText,
             decoration: InputDecoration(
