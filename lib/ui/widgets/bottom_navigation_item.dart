@@ -16,7 +16,10 @@ class BottomNavigationItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.read<PageCubit>().setPage(index),
+      onTap: () {
+        context.read<PageCubit>().setPage(index);
+        print(context.read<PageCubit>().state);
+      },
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

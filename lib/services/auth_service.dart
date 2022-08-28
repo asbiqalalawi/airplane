@@ -30,4 +30,12 @@ class AuthService {
       throw e;
     }
   }
+
+  Future<void> signOut() async {
+    try {
+      await auth.signOut();
+    } catch (e) {
+      throw e;
+    }
+  }
 }
