@@ -18,7 +18,7 @@ class BottomNavigationItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         context.read<PageCubit>().setPage(index);
-        print(context.read<PageCubit>().state);
+        debugPrint(context.read<PageCubit>().state.toString());
       },
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -28,17 +28,13 @@ class BottomNavigationItem extends StatelessWidget {
             imageUrl,
             height: 24,
             width: 24,
-            color: context.read<PageCubit>().state == index
-                ? primaryColor
-                : greyColor,
+            color: context.read<PageCubit>().state == index ? primaryColor : greyColor,
           ),
           Container(
             height: 2,
             width: 30,
             decoration: BoxDecoration(
-              color: context.read<PageCubit>().state == index
-                  ? primaryColor
-                  : Colors.transparent,
+              color: context.read<PageCubit>().state == index ? primaryColor : Colors.transparent,
               borderRadius: BorderRadius.circular(18),
             ),
           ),
