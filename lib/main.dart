@@ -6,6 +6,7 @@ import 'package:airplane/ui/pages/choose_seat_page.dart';
 import 'package:airplane/ui/pages/detail_page.dart';
 import 'package:airplane/ui/pages/get_started_page.dart';
 import 'package:airplane/ui/pages/main_page.dart';
+import 'package:airplane/ui/pages/sign_in_page.dart';
 import 'package:airplane/ui/pages/sign_up_page.dart';
 import 'package:airplane/ui/pages/splash_page.dart';
 import 'package:airplane/ui/pages/success_checkout_page.dart';
@@ -39,6 +40,7 @@ class MyApp extends StatelessWidget {
           '/': (context) => const SplashPage(),
           '/get-started': (context) => const GetStartedPage(),
           '/sign-up': (context) => SignUpPage(),
+          '/sign-in': (context) => SignInPage(),
           '/bonus': (context) => const BonusPage(),
           '/main': (context) => const MainPage(),
           '/detail': (context) => const DetailPage(),

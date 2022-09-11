@@ -1,4 +1,5 @@
 import 'package:airplane/cubit/auth_cubit.dart';
+import 'package:airplane/cubit/page_cubit.dart';
 import 'package:airplane/ui/widgets/button_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,8 +18,7 @@ class SettingPage extends StatelessWidget {
             ),
           );
         } else if (state is AuthInitial) {
-          Navigator.pushNamedAndRemoveUntil(
-              context, '/sign-up', (route) => false);
+          Navigator.pushNamedAndRemoveUntil(context, '/sign-in', (route) => false);
         }
       },
       builder: (context, state) {
@@ -33,6 +33,7 @@ class SettingPage extends StatelessWidget {
             text: 'Sign Out',
             onPress: () {
               context.read<AuthCubit>().signOut();
+              context.read<PageCubit>().setPage(0);
             },
             width: 220,
           ),

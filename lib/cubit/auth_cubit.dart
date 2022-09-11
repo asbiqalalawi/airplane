@@ -1,8 +1,8 @@
 import 'package:airplane/model/user_model.dart';
 import 'package:airplane/services/auth_service.dart';
 import 'package:airplane/services/user_service.dart';
-import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'auth_state.dart';
 
@@ -38,6 +38,16 @@ class AuthCubit extends Cubit<AuthState> {
           error: e.toString(),
         ),
       );
+    }
+  }
+
+  void signIn({required String email, required String password}) async {
+    try {
+      emit(AuthLoading());
+      UserModel user = await AuthService().signIn(email: email, password: password);
+      emit(AuthSuccess(user: user));
+    } catch (e) {
+      emit(AuthFailed(error: e.toString()));
     }
   }
 

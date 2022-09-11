@@ -1,3 +1,5 @@
+// ignore_for_file: use_rethrow_when_possible
+
 import 'package:airplane/model/user_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 

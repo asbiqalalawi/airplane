@@ -1,3 +1,5 @@
+// ignore_for_file: use_rethrow_when_possible
+
 import 'package:airplane/model/user_model.dart';
 import 'package:airplane/services/user_service.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -12,8 +14,7 @@ class AuthService {
     String hobby = '',
   }) async {
     try {
-      UserCredential userCredential = await auth.createUserWithEmailAndPassword(
-          email: email, password: password);
+      UserCredential userCredential = await auth.createUserWithEmailAndPassword(email: email, password: password);
 
       UserModel user = UserModel(
         id: userCredential.user!.uid,
@@ -25,6 +26,16 @@ class AuthService {
 
       await UserService().setUser(user);
 
+      return user;
+    } catch (e) {
+      throw e;
+    }
+  }
+
+  Future<UserModel> signIn({required String email, required String password}) async {
+    try {
+      UserCredential cred = await auth.signInWithEmailAndPassword(email: email, password: password);
+      UserModel user = await UserService().getCurrentUser(cred.user!.uid);
       return user;
     } catch (e) {
       throw e;
