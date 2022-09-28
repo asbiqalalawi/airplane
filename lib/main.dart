@@ -1,6 +1,7 @@
 import 'package:airplane/cubit/auth_cubit.dart';
 import 'package:airplane/cubit/destination_cubit.dart';
 import 'package:airplane/cubit/page_cubit.dart';
+import 'package:airplane/model/destination_model.dart';
 import 'package:airplane/ui/pages/bonus_page.dart';
 import 'package:airplane/ui/pages/checkout_page.dart';
 import 'package:airplane/ui/pages/choose_seat_page.dart';
@@ -47,7 +48,6 @@ class MyApp extends StatelessWidget {
           '/sign-in': (context) => SignInPage(),
           '/bonus': (context) => const BonusPage(),
           '/main': (context) => const MainPage(),
-          '/detail': (context) => const DetailPage(),
           '/choose-seat': (context) => const ChooseSeatPage(),
           '/checkout': (context) => const CheckoutPage(),
           '/success-checkout': (context) => const SuccessCheckoutPage(),
