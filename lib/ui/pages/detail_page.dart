@@ -1,5 +1,6 @@
 import 'package:airplane/model/destination_model.dart';
 import 'package:airplane/shared/theme.dart';
+import 'package:airplane/ui/pages/choose_seat_page.dart';
 import 'package:airplane/ui/widgets/button_container.dart';
 import 'package:airplane/ui/widgets/interest_item.dart';
 import 'package:airplane/ui/widgets/photo_item.dart';
@@ -240,7 +241,8 @@ class DetailPage extends StatelessWidget {
                   ContainerButton(
                     text: 'Book Now',
                     onPress: () {
-                      Navigator.pushNamed(context, '/choose-seat');
+                      Navigator.push(
+                          context, MaterialPageRoute(builder: (context) => ChooseSeatPage(destination: destination)));
                     },
                     width: 170,
                   ),
