@@ -52,7 +52,6 @@ class MyApp extends StatelessWidget {
           '/sign-in': (context) => SignInPage(),
           '/bonus': (context) => const BonusPage(),
           '/main': (context) => const MainPage(),
-          '/checkout': (context) => const CheckoutPage(),
           '/success-checkout': (context) => const SuccessCheckoutPage(),
         },
       ),
