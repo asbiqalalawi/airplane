@@ -58,7 +58,7 @@ class CheckoutPage extends StatelessWidget {
                     Text(
                       'TLC',
                       style: blackTextStyle.copyWith(
-                        fontWeight: semiBold,
+                        fontWeight: semiBold, 
                         fontSize: 24,
                       ),
                     ),

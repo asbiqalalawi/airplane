@@ -2,11 +2,8 @@ import 'package:airplane/cubit/auth_cubit.dart';
 import 'package:airplane/cubit/destination_cubit.dart';
 import 'package:airplane/cubit/page_cubit.dart';
 import 'package:airplane/cubit/seat_cubit.dart';
-import 'package:airplane/model/destination_model.dart';
+import 'package:airplane/cubit/transacrion_cubit.dart';
 import 'package:airplane/ui/pages/bonus_page.dart';
-import 'package:airplane/ui/pages/checkout_page.dart';
-import 'package:airplane/ui/pages/choose_seat_page.dart';
-import 'package:airplane/ui/pages/detail_page.dart';
 import 'package:airplane/ui/pages/get_started_page.dart';
 import 'package:airplane/ui/pages/main_page.dart';
 import 'package:airplane/ui/pages/sign_in_page.dart';
@@ -41,6 +38,9 @@ class MyApp extends StatelessWidget {
         ),
         BlocProvider(
           create: (context) => SeatCubit(),
+        ),
+        BlocProvider(
+          create: (context) => TransacrionCubit(),
         ),
       ],
       child: MaterialApp(
