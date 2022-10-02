@@ -3,10 +3,10 @@ import 'package:airplane/services/transaction_service.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-part 'transacrion_state.dart';
+part 'transaction_state.dart';
 
-class TransacrionCubit extends Cubit<TransacrionState> {
-  TransacrionCubit() : super(TransacrionInitial());
+class TransactionCubit extends Cubit<TransactionState> {
+  TransactionCubit() : super(TransacrionInitial());
 
   void createTransaction(TransactionModel transaction) async {
     try {

@@ -1,17 +1,17 @@
-part of 'transacrion_cubit.dart';
+part of 'transaction_cubit.dart';
 
-abstract class TransacrionState extends Equatable {
-  const TransacrionState();
+abstract class TransactionState extends Equatable {
+  const TransactionState();
 
   @override
   List<Object> get props => [];
 }
 
-class TransacrionInitial extends TransacrionState {}
+class TransacrionInitial extends TransactionState {}
 
-class TransactionLoading extends TransacrionState {}
+class TransactionLoading extends TransactionState {}
 
-class TransactionSuccess extends TransacrionState {
+class TransactionSuccess extends TransactionState {
   final TransactionModel transaction;
 
   const TransactionSuccess({required this.transaction});
@@ -20,7 +20,7 @@ class TransactionSuccess extends TransacrionState {
   List<Object> get props => [transaction];
 }
 
-class TransactionFailed extends TransacrionState {
+class TransactionFailed extends TransactionState {
   final String error;
 
   const TransactionFailed({required this.error});

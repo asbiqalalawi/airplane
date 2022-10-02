@@ -1,4 +1,5 @@
 import 'package:airplane/cubit/auth_cubit.dart';
+import 'package:airplane/cubit/transaction_cubit.dart';
 import 'package:airplane/model/transacrion_model.dart';
 import 'package:airplane/shared/theme.dart';
 import 'package:airplane/ui/widgets/booking_details_item.dart';
@@ -58,7 +59,7 @@ class CheckoutPage extends StatelessWidget {
                     Text(
                       'TLC',
                       style: blackTextStyle.copyWith(
-                        fontWeight: semiBold, 
+                        fontWeight: semiBold,
                         fontSize: 24,
                       ),
                     ),
@@ -322,13 +323,36 @@ class CheckoutPage extends StatelessWidget {
     }
 
     Widget paymentButton() {
-      return ContainerButton(
-        text: 'Pay Now',
-        onPress: () => Navigator.pushNamed(
-          context,
-          '/success-checkout',
-        ),
-        margin: const EdgeInsets.symmetric(vertical: 30),
+      return BlocConsumer<TransactionCubit, TransactionState>(
+        listener: (context, state) {
+          if (state is TransactionSuccess) {
+            Navigator.pushNamed(
+              context,
+              '/success-checkout',
+            );
+          } else if (state is TransactionFailed) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                backgroundColor: pinkColor,
+                content: Text(state.error),
+              ),
+            );
+          }
+        },
+        builder: (context, state) {
+          if (state is TransactionLoading) {
+            return Container(
+              alignment: Alignment.center,
+              margin: const EdgeInsets.only(top: 30),
+              child: const CircularProgressIndicator(),
+            );
+          }
+          return ContainerButton(
+            text: 'Pay Now',
+            onPress: () => context.read<TransactionCubit>().createTransaction(transaction),
+            margin: const EdgeInsets.symmetric(vertical: 30),
+          );
+        },
       );
     }
 
