@@ -41,6 +41,7 @@ class TransactionModel extends Equatable {
   @override
   List<Object?> get props => [
         destination,
+        id,
         amountOfTraveler,
         selectedSeat,
         insurance,

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:airplane/model/transacrion_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -8,7 +10,7 @@ class TransactionService {
     try {
       transactionReference.add({
         'destination': transaction.destination.toJson(),
-        'amountOfTraveller': transaction.amountOfTraveler,
+        'amountOfTraveler': transaction.amountOfTraveler,
         'selectedSeat': transaction.selectedSeat,
         'insurance': transaction.insurance,
         'refundable': transaction.refundable,
